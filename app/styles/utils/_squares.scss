@@ -1,0 +1,12 @@
+// SQUARES {{{
+// All widths by 5% increment
+@for $i from 1 through 20 {
+  $width: $i * 5;
+  .sq-#{$width} { 
+    position: relative;
+    height: 0;
+    width: $width + %; 
+    padding-bottom: $width + %
+  }
+}
+// }}}

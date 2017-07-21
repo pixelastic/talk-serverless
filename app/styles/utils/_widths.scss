@@ -5,5 +5,11 @@
 .mw3 { max-width: 4rem; }
 .mw4 { max-width: 8rem; }
 .mw5 { max-width: 16rem; }
-.w-15 { width: 15%; }
-// }}}
+
+// All widths by 5% increment
+@for $i from 1 through 20 {
+  $width: $i * 5;
+  .w-#{$width} { width: $width + %; }
+}
+
+  // }}}

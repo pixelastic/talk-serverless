@@ -12,37 +12,55 @@ section.slide--horizontal
     p Allow creating this UI. Each character is a call
 
 // DX
-section.slide--horizontal.debug
+-
+  var languages = [
+    {name: 'PHP', icon: 'php'},
+    {name: 'Ruby', icon: 'ruby'},
+    {name: 'JavaScript', icon: 'javascript'},
+    {name: 'Python', icon: 'python'},
+    {name: 'iOS', icon: 'swift'},
+    {name: 'Android', icon: 'android'},
+    {name: 'Java', icon: 'java'},
+    {name: 'Go', icon: 'go'},
+    {name: 'Scala', icon: 'scala'},
+    {name: 'Rails', icon: 'rails'},
+    {name: 'Symfony', icon: 'symfony'},
+    {name: 'Laravel', icon: 'laravel'}
+  ]
+section.slide--horizontal
   .h-100.flcnw.pa3
     .fln.f1.lh-title.tl.b Developer eXperience (DX)
-    .fla.flcnw.h-100
-      .fln.h-50.flcnw.flccv.tl
-        .flcnw
-          .fln.f1.bullet-shamrock.b API Clients and plugins
-          .fln.flrw.flrspb
-            -
-              var languages = [
-                {name: 'PHP', icon: 'php'},
-                {name: 'Ruby', icon: 'ruby'},
-                {name: 'JavaScript', icon: 'javascript'},
-                {name: 'Python', icon: 'python'},
-                {name: 'iOS', icon: 'swift'},
-                {name: 'Android', icon: 'android'},
-                {name: 'C#', icon: 'csharp'},
-                {name: 'Java', icon: 'java'},
-                {name: 'Go', icon: 'go'},
-                {name: 'Scala', icon: 'scala'},
-                {name: 'Rails', icon: 'rails'},
-                {name: 'Symfony', icon: 'symfony'},
-                {name: 'Django', icon: 'django'},
-                {name: 'Laravel', icon: 'laravel'}
-              ]
+    .fla.flcnw
 
-            each language in languages
-              .fln.mr3.shadow-1.pa1.flcnw.w4.h4
+      .fla.flcnw.pa2
+        .fln.f1.bullet-shamrock.tl API Clients & Plugins
+        .fln.flrw
+          each language in languages
+            .fla.sq-15
+              .absolute-0.ma2.br3.shadow-1.flcnw
                 .fla.flc.h-100
                   img.h-100(src=`./img/algolia/languages/${language.icon}.svg`)
-                .fln.bg-titan-white= language.name
+                .fln.bg-athens-gray.portage.ma2.tc.f3= language.name
 
-section DX + API Clients + Docs/Tutorials
-section Backend and Frontend
+      .fla.flcnw.flccv
+        .fln.f1.bullet-shamrock.tl 
+          a.link.algolia-blue.pointer.underline-hover(href="https://www.algolia.com/doc/") Documentation
+          |, 
+          a.link.algolia-blue.pointer.underline-hover(href="https://discourse.algolia.com/") forum
+          |, 
+          a.link.algolia-blue.pointer.underline-hover(href="https://www.algolia.com/doc/guides/") guides
+          |, 
+          a.link.algolia-blue.pointer.underline-hover(href="https://www.algolia.com/doc/tutorials/") tutorials
+          |, 
+          a.link.algolia-blue.pointer.underline-hover(href="https://community.algolia.com/instantsearch.js/v2/examples.html") demos
+
+// Backend and Frontent
+section.slide--horizontal
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Backend & Frontend
+    .fla.flcnw.h-100.tl
+      .fla.flcnw.flccv
+        .f1.bullet-algolia-blue Push a copy of your data from your backend
+      .fla.flcnw.flccv
+        .f1.bullet-algolia-blue Search directly from your frontend
+
