@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>csharp_icon_color</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#E04688" offset="0%"></stop>
+            <stop stop-color="#8B2E8B" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Color" transform="translate(-64.000000, -64.000000)">
+            <g id="csharp_logo" transform="translate(64.000000, 64.000000)">
+                <rect id="bounds" x="0" y="0" width="40" height="40"></rect>
+                <path d="M10.109118,13.6089938 L10.1095652,13.6089938 L17.2067081,12.6421366 L17.2098385,19.4888447 L10.1153789,19.5299876 L10.109118,13.6089938 Z M17.2035776,20.2777143 L17.2035776,20.2777143 L17.2089441,27.1297888 L10.1140373,26.154882 L10.1140373,20.2320994 L17.2035776,20.2777143 Z M18.064,12.5160248 L18.064,12.5160248 L27.4749814,11.1422112 L27.4749814,19.402087 L18.064,19.4767702 L18.064,12.5160248 Z M27.4776646,20.3421118 L27.476323,20.3421118 L27.474087,28.5644224 L18.0631056,27.2362236 L18.0496894,20.3269068 L27.4776646,20.3421118 Z" id="csharp_icon" fill="url(#linearGradient-1)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

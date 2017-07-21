@@ -1,0 +1,53 @@
+include ./mixins/polaroid
+doctype html
+html(lang="en")
+  include ./partials/header
+  body
+    .reveal
+      .slides.bg-white.lh-copy.bunting.f3.fw3
+
+        include ./slides/intro
+        include ./slides/algolia
+
+        section (Live?) demo
+        section dashboard to do everything
+        section Push data with API
+        section search in the dashboard
+        section update settings, show results
+        section build UI with instantsearch
+        section widgets
+        section code to build it, Marvel example
+
+        section Serverless
+        section Building blocks, one API to do one thing (logos of each company)
+          // Cloudinary, Stripe, Auth0, Netlify, Twilio, Mailjet, PubNub
+        section each is a specific problem, own domain of expertise, solved
+        section We are the search brick. We are expert, so you don't have to
+        section ML? Image search? Voice recognition? Nope, but make it possible to plug APIs that do it
+        // section bring search to a world that could not have it (SSG)
+
+        section My Algolia
+        section Numbers today
+        section Numbers when I joined
+        section what changed and what didn't?
+        section offices in various countries (new coming, we're hiring)
+        section different countries, different culture, no culture fit
+        section values instead
+        section Ownership is Trust + Grit
+        section Transparency is Trust + Candor
+        section Feedback is Candor + Care
+        section Constant improvement is Humility + Grit
+
+        section Two things to remember:
+          // - We do search and we do it right
+          // - Don't be too obsessed with culture fit, but define the values of your organisation
+
+
+
+
+        include ./slides/conclusion
+
+        include ./partials/aside-horizontal
+        include ./partials/aside-vertical
+
+    include ./partials/footer

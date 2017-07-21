@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+BRUNCH_ENV='prod' npm run build:html
+brunch build --production

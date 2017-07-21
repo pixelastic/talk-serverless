@@ -1,0 +1,34 @@
+$gradients: 
+  green 320deg $shamrock mix($shamrock, $java),
+  blue  256deg $algolia-blue $royal-blue,
+  pink  256deg $bittersweet $radical-red,
+  orange  256deg $koromiko $bittersweet,
+  purple  269deg #8e43e6 #b84592,
+  light-blue 269deg $algolia-blue $java,
+  dark 283deg $deep-cove $bunting
+;
+
+@each $gradient in $gradients {
+  $name: nth($gradient, 1);
+  $angle: nth($gradient, 2);
+  $start: nth($gradient, 3);
+  $end: nth($gradient, 4);
+
+  .bg-gradient-#{$name} {
+    background-image: linear-gradient($angle, $start, $end);
+  }
+  @for $i from 1 through 9 {
+    .bg-gradient-#{$name}-#{$i}0 {
+      background-color: linear-gradient($angle, rgba($start, $i / 10), rgba($end, $i / 10));
+    }
+  }
+
+  .bg-gradient-#{$name}-inverted {
+    background-image: linear-gradient($angle, $end, $start);
+  }
+  @for $i from 1 through 9 {
+    .bg-gradient-#{$name}-inverted-#{$i}0 {
+      background-color: linear-gradient($angle, rgba($end, $i / 10), rgba($start, $i / 10));
+    }
+  }
+}

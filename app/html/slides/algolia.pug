@@ -1,0 +1,48 @@
+// Screencast demo
+section.slide--horizontal
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Algolia: Search as a Service
+    .fla.flcnw.h-100
+      .fla.flc
+        img.h-100(src='./img/movies.gif')
+  aside.notes
+    p Search API. Push copy of data, expose endpoint to search in it
+    p Fast & Relevant
+    p Typos, plurals, synonyms
+    p Allow creating this UI. Each character is a call
+
+// DX
+section.slide--horizontal.debug
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Developer eXperience (DX)
+    .fla.flcnw.h-100
+      .fln.h-50.flcnw.flccv.tl
+        .flcnw
+          .fln.f1.bullet-shamrock.b API Clients and plugins
+          .fln.flrw.flrspb
+            -
+              var languages = [
+                {name: 'PHP', icon: 'php'},
+                {name: 'Ruby', icon: 'ruby'},
+                {name: 'JavaScript', icon: 'javascript'},
+                {name: 'Python', icon: 'python'},
+                {name: 'iOS', icon: 'swift'},
+                {name: 'Android', icon: 'android'},
+                {name: 'C#', icon: 'csharp'},
+                {name: 'Java', icon: 'java'},
+                {name: 'Go', icon: 'go'},
+                {name: 'Scala', icon: 'scala'},
+                {name: 'Rails', icon: 'rails'},
+                {name: 'Symfony', icon: 'symfony'},
+                {name: 'Django', icon: 'django'},
+                {name: 'Laravel', icon: 'laravel'}
+              ]
+
+            each language in languages
+              .fln.mr3.shadow-1.pa1.flcnw.w4.h4
+                .fla.flc.h-100
+                  img.h-100(src=`./img/algolia/languages/${language.icon}.svg`)
+                .fln.bg-titan-white= language.name
+
+section DX + API Clients + Docs/Tutorials
+section Backend and Frontend

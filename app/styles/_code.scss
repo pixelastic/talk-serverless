@@ -1,0 +1,80 @@
+$oroshi-green: #00AF5F;
+$oroshi-dark-green: #008700;
+$oroshi-orange: $orange;
+$oroshi-red: $bittersweet;
+$oroshi-blue: #5F87AF;
+$oroshi-white: $light-gray;
+$oroshi-gray: $mid-gray;
+
+
+// Oroshi colorscheme
+.token {
+  &.punctuation {
+    color: $oroshi-white;
+  }
+  &.comment {
+    color: $oroshi-gray;
+  }
+  &.string {
+    color: $oroshi-blue;
+  }
+  // &.property {
+  //   color: #FF5F5F;
+  // }
+  // &.function {
+  //   color: #008700;
+  // }
+  // &.variable {
+  //   color: #00AF5F;
+  // }
+  // &.keyword {
+  //    color: #FF5F5F;
+  // }
+  // &.constant {
+  //    color: #FFAF00;
+  // }
+  // &.number {
+  //   color: #5F87AF;
+  //   font-weight: bold;
+  // }
+}
+
+.language-html {
+  color: $oroshi-white;
+  .token {
+    &.tag,
+    &.punctuation {
+      color: $oroshi-dark-green;
+    }
+    &.attr-name {
+       color: $oroshi-red;
+    }
+    &.attr-value {
+      color: $oroshi-blue;
+      .punctuation ~ .punctuation {
+        color: $oroshi-blue;
+      }
+    }
+  }
+}
+
+.language-scss {
+  // Value don't have a specific class, so we set it as the default value
+  color: $oroshi-orange; 
+  .token {
+    &.selector {
+      color: $oroshi-green;
+    }
+    &.property {
+      color: $oroshi-red;
+    }
+  }
+}
+
+.language-js {
+  .token {
+    &.function {
+      color: $oroshi-dark-green;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+npm run build &&
+rsync \
+  --recursive \
+  --verbose \
+  --archive \
+  --update \
+  --delete \
+  --prune-empty-dirs \
+  --compress \
+  ./public/* \
+  pixelastic:/var/www/talks.pixelastic.com/slides/algolia-how-to-get-your-talk-accepted-at-a-conference/

@@ -1,0 +1,33 @@
+// FLEXBOX {{{
+.fl, .flex { display: flex; }
+// Auto / None
+.fla, .flex-auto { flex:1 1 auto; min-width:0; min-height:0; }
+.fln, .flex-none  { flex: none; }
+// Grow / Shrink
+.flg, .flex-grow { flex-grow: 1; }
+.flng, .flex-nogrow { flex-grow: 0; }
+.fls, .flex-shrink { flex-shrink: 1; }
+.flns, .flex-noshrink { flex-shrink: 0; }
+// Row / Column
+.flrw, .flex-row-wrap { display: flex; flex-direction: row; flex-wrap: wrap; }
+.flrnw, .flex-row-nowrap { display: flex; flex-direction: row; }
+.flcw, .flex-column-wrap { display: flex; flex-direction: column; flex-wrap: wrap; }
+.flcnw, .flex-column-nowrap { display: flex; flex-direction: column; }
+// Center rows
+.flrcv, .flex-row-center-vertical { display: flex; align-items: center }
+.flrch, .flex-row-center-horizontal { display: flex; justify-content: center }
+// Center columns
+.flccv, .flex-column-center-vertical { display: flex; justify-content: center }
+.flcch, .flex-column-center-horizontal { display: flex; align-items: center }
+// Center everything horizontaly and verticaly
+.flc, .flex-center { display: flex; align-items: center; justify-content: center; }
+// Horizontal spacing around elements
+.flrspa, .flspah, .flex-horizontal-spacing-around { justify-content: space-around; }
+.flrspb, .flspbh, .flex-horizontal-spacing-between { justify-content: space-between; }
+// Vertical spacing around elements
+.flcspa, .flspav, .flex-vertical-spacing-around { justify-content: space-around; }
+.flcspb, .flspbv, .flex-vertical-spacing-between { justify-content: space-between; }
+// Column alignment
+.flcat, .flex-column-align-top { justify-content: flex-start; }
+.flcab, .flex-column-align-bottom { justify-content: flex-end; }
+// }}}

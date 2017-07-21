@@ -1,0 +1,40 @@
+$colors:
+  purple-heart $purple-heart,
+  mulberry $mulberry,
+  radical-red $radical-red,
+  bittersweet $bittersweet,
+  koromiko $koromiko,
+  shamrock $shamrock,
+  java $java,
+  algolia-blue $algolia-blue,
+  royal-blue $royal-blue,
+  bunting $bunting,
+  titan-white $titan-white,
+  logan $logan,
+  deep-cove $deep-cove,
+  port-gore $port-gore,
+  east-bay $east-bay,
+  portage $portage,
+  blue-bell $blue-bell,
+  ghost $ghost,
+  athens-gray $athens-gray,
+  april-fools-purple $april-fools-purple
+;
+
+@each $color in $colors {
+  $name: nth($color, 1);
+  $value: nth($color, 2);
+
+  // Text color
+  .#{$name} { color: $value }
+  // Background color
+  .bg-#{$name} { background-color: $value }
+  // Transparent background color
+  @for $i from 1 through 9 {
+    .bg-#{$name}-#{$i}0 {
+      background-color: rgba($value, $i / 10); 
+    }
+  }
+  // Bullets
+  .bullet-#{$name}:before { content: "> "; color: #{$value} }
+}
