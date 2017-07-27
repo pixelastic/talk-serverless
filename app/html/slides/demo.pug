@@ -58,7 +58,7 @@ section.slide--horizontal
             |  "authors": ["Jack Kirby", "Stan Lee"],
             |  "powers": ["Energy repulsors", […], "Super strength"],
             |  "teams": ["Avengers", […], "Stark Industries"],
-            |  "storyCount": 2903
+            |  "adventureCount": 2903
             |  },
             |  […]
             |}
@@ -121,9 +121,9 @@ section.slide--horizontal
               |     'description'
               |  ],
               |  customRanking: [
-              |   'desc(storyCount)'
+              |   'desc(adventureCount)'
               |  ],
-              |  attributesForFacetting: [
+              |  attributesForFaceting: [
               |   'authors', 
               |   'powers', 
               |   'team'
@@ -137,7 +137,9 @@ section.slide--horizontal.mb4
     .fla.flrnw.flc
         img.w-100(src='./img/dashboard-search-settings.gif')
 
-// Search UI Patterns
+// Search UI Components
+// TODO: Show screenshots of 4 different UIs, to show that they are often the
+// same
 section.slide--horizontal.mb4
   -
     var widgets = [
@@ -151,7 +153,7 @@ section.slide--horizontal.mb4
       {name: 'Toggle', icon: 'toggle'},
     ]
   .h-100.flcnw.pa3.mb4
-    .fln.f1.lh-title.tl.b Common patterns of search UI
+    .fln.f1.lh-title.tl.b Common components of a search UI
     .fla.flrnw.bg-right.bg-contain(style="background-image:url('./img/ui-animation.gif')")
       .fln.flcnw.w-50.flccv.pa5
         .fla.flcnw.flcspa
@@ -230,6 +232,7 @@ section.slide--horizontal
             |);
 
 // Demo
+// TODO: Record a slower version of the gif
 section.slide--horizontal
   .absolute.absolute-0.bg-cover.bg-top(style="background-image: url('./img/demo-marvel.gif')")
 
