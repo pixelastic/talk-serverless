@@ -4,4 +4,9 @@
 .bg-cover { background-repeat: no-repeat; background-size: cover; }
 .bg-contain { background-repeat: no-repeat; background-size: contain; }
 .bg-bottom-right { background-repeat: no-repeat; background-position: bottom right; }
+.bg-right { background-repeat: no-repeat; background-position: center right; }
+// }}}
+// Aerial patterns {{{
+.bg-aerial { background-image:url('./img/aerial-background.svg'); background-repeat: no-repeat; background-position: center left; }
+.bg-aerial-fast { background-image:url('./img/aerial-fast.svg'); background-repeat: no-repeat;  }
 // }}}

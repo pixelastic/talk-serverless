@@ -10,53 +10,226 @@ section.slide--horizontal.slide--theme1(data-transition='fade-in')
       .di.strike Live
       |  demo
 
-section
-  div small gif of "Upload JSON"
-  div but everything in dahsboard also in API
-  div would be too easy
-  div so gonna do it in ruby
-
-section
-  div Let's say directory with list of files
-  div each file is a super heroe, showing the record
-  div schemaless
-
-section
-  div ruby instanciate app
-  div read directory
-  div batch and push
-  div explain asynchronous/batch
-  div add a bit of configuration to explain why interesting that way
-
-section
-  div show it in the dashboard as searchable already
-
-section
-  div building the UI
-  div all search UI follow a similar pattern
-  div think of them as UI widgets
-
-section
-  div InstantSearch, js lib with those widgets
-  div bind them together
-  div agnostic, react, or vue, or android, or swift
-
-section
-  div showing the IS code example, easy to extend
-  div widget, template, sting
-  div demo of Marvel
-
-
-// Dashboard
+// Dashboard upload
 section.slide--horizontal
   .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Dashboard UI
-    .fla.flcnw.h-100
-      .fla.flc
-        img.h-80.shadow-1.br2(src='./img/dashboard.gif')
-  aside.notes
-    p Search API. Push copy of data, expose endpoint to search in it
-    p Fast & Relevant
-    p Typos, plurals, synonyms
-    p Allow creating this UI. Each character is a call
+    .fln.f1.lh-title.tl.b Dashboard or API
+    .fla.flrnw
+      .fln.w-third.flcnw.flc
+        img(src='./img/dashboard-index.png')
+      .fln.w-two-thirds.flc
+        .f1
+          .db Every dashboard action is 
+          .db also doable through the API
+    aside.notes
+      p Demo through dashboard will be too easy
+      p Let's see some code
+
+// Data material
+section.slide--horizontal
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Data as schemaless JSON
+    .fla.flrnw
+      .fln.w-50.flc
+        pre.bg-near-black.pa4.tl
+          code.language-shell
+            .shell-directory ./records
+            .db  ├── 
+              .di.shell-file 8-Ball_(comics).json
+            .db  ├── 
+              .di.shell-file Abdul_Alhazred_(comics).json
+            .db  ├── 
+              .di.shell-file Abigail_Brand.json
+            .db  ├── 
+              .di […]
+            .db  ├── 
+              .di.shell-file Zombie_(comics).json
+            .db  ├── 
+              .di.shell-file Zom.json
+            .db  └── 
+              .di.shell-file Zzzax.json
+      .fln.w-50.flc
+        pre.bg-near-black.pa2.lh-copy.tl.f4
+          code.language-js
+            |{
+            |  "name": "Iron Man",
+            |  "secretIdentity": "Tony Stark",
+            |  "description": "Wounded, captured and forced to […]",
+            |  "authors": ["Jack Kirby", "Stan Lee"],
+            |  "powers": ["Energy repulsors", […], "Super strength"],
+            |  "teams": ["Avengers", […], "Stark Industries"],
+            |  "storyCount": 2903
+            |  },
+            |  […]
+            |}
+    aside.notes
+      p JSON files on disk
+      p Schemaless files, but semi-structured data
+      p Any attributes, nested ones
+
+// Pushing data
+section.slide--horizontal
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Pushing data with Ruby
+    .fla.flrnw.flc
+      pre.bg-near-black.pa2.lh-copy.tl
+        code.language-ruby
+          |require 'algoliasearch'
+          |
+          |# Init Algolia index
+          |Algolia.init(
+          |  application_id: 'O3F8QXYK6R', 
+          |  api_key: '476071478e45b023b7ff7d8ba8'
+          |)
+          |index = Algolia::Index.new('marvel')
+          |
+          |# Read files from disk
+          |records = Dir.glob("./records/*.json").map { |file| JSON.parse(File.read(file)) }
+          |
+          |# Push records to index
+          |records.each_slice(500) do |batch|
+          |  index.add_objects!(batch.to_a)
+          |end
+
+// Easy search in dashboard
+section.slide--horizontal.mb4
+  .h-100.flcnw.pa3.mb4
+    .fln.f1.lh-title.tl.b Testing your queries in the explorer
+    .fla.flrnw
+      img.w-100(src='./img/dashboard-search-no-settings.gif')
+
+// Configuring settings
+section.slide--horizontal
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Configuring your index
+    .fla.flrnw
+      .fln.w-50.flcnw.flc
+        .tl.f1.flcnw.flcspa
+          .bullet-shamrock Fields to search
+          .bullet-shamrock Order of importance
+          .bullet-shamrock Ranking attribute
+          .bullet-shamrock Filters
+          .bullet-shamrock More...
+      .fln.w-50.flc
+        .db.fla.pa5
+          pre.bg-near-black.pa3.lh-copy.tl.f3
+            code.language-ruby
+              |index.set_settings!(
+              |  searchableAttributes: [
+              |     'name', 
+              |     'secretIdentity',
+              |     'description'
+              |  ],
+              |  customRanking: [
+              |   'desc(storyCount)'
+              |  ],
+              |  attributesForFacetting: [
+              |   'authors', 
+              |   'powers', 
+              |   'team'
+              |  ]
+              |)
+
+// Easy search in dashboard
+section.slide--horizontal.mb4
+  .h-100.flcnw.pa3.mb4
+    .fln.f1.lh-title.tl.b Better relevance
+    .fla.flrnw.flc
+        img.w-100(src='./img/dashboard-search-settings.gif')
+
+// Search UI Patterns
+section.slide--horizontal.mb4
+  -
+    var widgets = [
+      {name: 'Searchbar', icon: 'searchbar'},
+      {name: 'Results', icon: 'results'},
+      // {name: 'Pagination', icon: 'pagination'},
+      {name: 'Sort', icon: 'sort'},
+      {name: 'Filters', icon: 'refinementlist'},
+      // {name: 'Menu', icon: 'menu'},
+      {name: 'Slider', icon: 'slider'},
+      {name: 'Toggle', icon: 'toggle'},
+    ]
+  .h-100.flcnw.pa3.mb4
+    .fln.f1.lh-title.tl.b Common patterns of search UI
+    .fla.flrnw.bg-right.bg-contain(style="background-image:url('./img/ui-animation.gif')")
+      .fln.flcnw.w-50.flccv.pa5
+        .fla.flcnw.flcspa
+          each widget in widgets
+            .fln.flrnw
+              .fln.flc
+                img.h3(src=`./img/widget-${widget.icon}.svg`)
+              .fla.f1.flcnw.flccv.tl.pl3.f2= widget.name
+
+// InstantSearch family
+section.slide--horizontal
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b InstantSearch
+    .fla.flcnw
+      .fla.flrnw
+        .fln.w-third.flc
+          img(src='./img/instantsearch-medal.svg')
+        .fln.w-two-thirds.flcnw.flc.f-subheadline
+          .fln Library of search UI 
+            .di.b widgets
+      .fln.flrnw.fragment.mb4
+        .fla.flc
+          img.mv3(src='./img/InstantSearch-React.svg')
+        .fla.flc
+          img.mv3(src='./img/InstantSearch-Vue.svg')
+        .fla.flc
+          img.mv3(src='./img/InstantSearch-Android.svg')
+        .fla.flc
+          img.mv3(src='./img/InstantSearch-iOS.svg')
+
+// InstantSearch code example
+section.slide--horizontal
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b InstantSearch example
+    .fla.flrnw
+      .fln.w-50.flcnw.flcspb.ph2
+        pre.bg-near-black.ph3.pv1.lh-copy.tl.f3
+          code.language-html
+            |&lt;header&gt;
+            |  &lt;input id="searchbar" /&gt;
+            |&lt;/header&gt;
+            |&lt;div&gt;
+            |  &lt;aside&gt;
+            |    &lt;div id="team"&gt;&lt;/div&gt;
+            |    &lt;div id="powers"&gt;&lt;/div&gt;
+            |    &lt;div id="authors"&gt;&lt;/div&gt;
+            |  &lt;/aside&gt;
+            |  &lt;div id="results"&gt;&lt;/div&gt;
+            |&lt;/div&gt;
+        pre.fln.bg-near-black.ph3.pv1.lh-copy.tl.f3.mta
+          code.language-js
+            |let search = instantsearch({
+            |  appId: 'O3F8QXYK6R',
+            |  apiKey: '78e45b023b7ff7d8ba88c59c9db19890',
+            |  indexName: 'marvel'
+            |});
+      .fln.w-50.ph2
+        pre.bg-near-black.ph3.pv1.lh-copy.tl.f3
+          code.language-js
+            |search.addWidget(
+            |  instantsearch.widgets.searchBox({
+            |    container: '#searchbar'
+            |  })
+            |);
+            |search.addWidget(
+            |  instantsearch.widgets.hits({
+            |    container: '#results',
+            |    template: "<h3>{{name}}</h3><p>{{description}}</p>"
+            |  })
+            |);
+            |search.addWidget(
+            |  instantsearch.widgets.refinementList({
+            |    container: '#powers',
+            |    attributeName: 'powers'
+            |  })
+            |);
+
+// Demo
+section.slide--horizontal
+  .absolute.absolute-0.bg-cover.bg-top(style="background-image: url('./img/demo-marvel.gif')")
 

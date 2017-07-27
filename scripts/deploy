@@ -9,4 +9,4 @@ rsync \
   --prune-empty-dirs \
   --compress \
   ./public/* \
-  pixelastic:/var/www/talks.pixelastic.com/slides/algolia-how-to-get-your-talk-accepted-at-a-conference/
+  pixelastic:/var/www/talks.pixelastic.com/slides/algolia-serverless-auckland-2017/

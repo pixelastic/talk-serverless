@@ -7,3 +7,110 @@
   padding: .25rem;
 }
 // }}}
+
+$oroshi-blue: #5F87AF;
+$oroshi-dark-green: #008700;
+$oroshi-gold: $gold;
+$oroshi-gray: $mid-gray;
+$oroshi-green: #00AF5F;
+$oroshi-orange: $orange;
+$oroshi-purple: #7F81FE;
+$oroshi-red: $bittersweet;
+$oroshi-white: $light-gray;
+$oroshi-yellow: $yellow;
+
+
+// Oroshi colorscheme
+.token {
+  &.punctuation {
+    color: $oroshi-white;
+  }
+  &.comment {
+    color: $oroshi-gray;
+  }
+  &.string {
+    color: $oroshi-blue;
+  }
+  &.number {
+    color: $oroshi-blue;
+    font-weight: bold;
+  }
+}
+
+.language-html {
+  color: $oroshi-white;
+  .token {
+    &.tag,
+    &.punctuation {
+      color: $oroshi-dark-green;
+    }
+    &.attr-name {
+       color: $oroshi-red;
+    }
+    &.attr-value {
+      color: $oroshi-blue;
+      .punctuation ~ .punctuation {
+        color: $oroshi-blue;
+      }
+    }
+  }
+}
+
+.language-scss {
+  // Value don't have a specific class, so we set it as the default value
+  color: $oroshi-orange; 
+  .token {
+    &.selector {
+      color: $oroshi-green;
+    }
+    &.property {
+      color: $oroshi-red;
+    }
+  }
+}
+
+.language-js {
+  color: $oroshi-white;
+  .token {
+    &.keyword {
+      color: $oroshi-red;
+    }
+    &.function {
+      color: $oroshi-green;
+    }
+  }
+}
+
+.language-ruby {
+  color: $oroshi-orange;
+  .token {
+    &.constant {
+      color: $oroshi-gold;
+    }
+    &.builtin {
+      color: $oroshi-gold;
+    }
+    &.keyword {
+      color: $oroshi-green;
+    }
+    &.function {
+      color: $oroshi-white;
+    }
+    &.operator {
+      color: $oroshi-white;
+    }
+  }
+}
+
+// This one does not really exists in Prism.js. We used it to display directory
+// listings, but one have to manually add the classes
+.language-shell {
+  color: $oroshi-white;
+  line-height: 1.2;
+  .shell-directory {
+    color: $oroshi-green;
+  }
+  .shell-file {
+    color: $oroshi-purple;
+  }
+}
