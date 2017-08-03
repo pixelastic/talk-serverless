@@ -1,0 +1,109 @@
+// Lego bricks dimensions are:
+// 9.6mm tall + 1.8 for knob
+// (width x 8 - 0.2mm) wide
+// (length x 8 - 0.2mm) long
+$lego-height: 96px;
+$lego-width: 2 * 80 - 2px;
+$lego-length: 4 * 80 - 2px;
+
+.brick-container {
+  width: $lego-length;
+  height: $lego-height;
+  position: absolute;
+  perspective: 1000px;
+  top: 150px;
+  left: 150px;
+}
+
+@keyframes spin {
+	from { transform: rotateX(-11deg) rotateY(0); }
+	to { transform: rotateX(-11deg) rotateY(360deg); }
+}
+.brick {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: spin 10s infinite linear;
+}
+
+.brick-face {
+  display: block;
+  position: absolute;
+  border:1px solid rgba($logan, .5);;
+}
+
+.brick-face.front  { 
+  width: $lego-length; 
+  height: $lego-height; 
+  transform: rotateY(0deg) translateZ($lego-width / 2); 
+  border-bottom:2px solid $bunting;
+}
+.brick-face.back   { 
+  width: $lego-length; 
+  height: $lego-height; 
+  transform: translateZ(-$lego-width / 2) rotateY(180deg);
+  border-bottom:2px solid $bunting;
+}
+.brick-face.right  { 
+  width: $lego-width; 
+  height: $lego-height; 
+  left: ($lego-length - $lego-width) / 2;
+  transform: rotateY(90deg) translateZ($lego-length / 2);
+  border-bottom:2px solid $bunting;
+}
+.brick-face.left  { 
+  width: $lego-width; 
+  height: $lego-height; 
+  left: ($lego-length - $lego-width) / 2;
+  transform: rotateY(-90deg) translateZ($lego-length / 2);
+  border-bottom:2px solid $bunting;
+}
+.brick-face.top  { 
+  width: $lego-length; 
+  height: $lego-width; 
+  top: ($lego-height - $lego-width) / 2;
+  transform: rotateX(90deg) translateZ($lego-height / 2);
+}
+.brick-face.bottom  { 
+  width: $lego-length; 
+  height: $lego-width; 
+  top: ($lego-height - $lego-width) / 2;
+  transform: rotateX(-90deg) translateZ($lego-height / 2);
+}
+
+.stud {
+  display: block;
+  width: 50px;
+  height: 75px;
+  // border-radius: 100%;
+  background: $red;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: -10px;
+    height: 20px;
+    width: 50px;
+    background: $green;
+    border-radius: 25px / 10px;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: -10px;
+    height: 20px;
+    width: 50px;
+    background: $red;
+    border-radius: 25px / 10px;
+  }
+}
+
+// .brick.show-front  { transform: translateZ( -100px ) rotateY(    0deg ); }
+// .brick.show-back   { transform: translateZ( -100px ) rotateX( -180deg ); }
+// .brick.show-right  { transform: translateZ( -100px ) rotateY(  -90deg ); }
+// .brick.show-left   { transform: translateZ( -100px ) rotateY(   90deg ); }
+// .brick.show-top    { transform: translateZ( -100px ) rotateX(  -90deg ); }
+// .brick.show-bottom { transform: translateZ( -100px ) rotateX(   90deg ); }

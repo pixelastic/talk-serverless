@@ -19,7 +19,7 @@ $gradients:
   }
   @for $i from 1 through 9 {
     .bg-gradient-#{$name}-#{$i}0 {
-      background-color: linear-gradient($angle, rgba($start, $i / 10), rgba($end, $i / 10));
+      background-image: linear-gradient($angle, rgba($start, $i / 10), rgba($end, $i / 10));
     }
   }
 
@@ -28,7 +28,7 @@ $gradients:
   }
   @for $i from 1 through 9 {
     .bg-gradient-#{$name}-inverted-#{$i}0 {
-      background-color: linear-gradient($angle, rgba($end, $i / 10), rgba($start, $i / 10));
+      background-image: linear-gradient($angle, rgba($end, $i / 10), rgba($start, $i / 10));
     }
   }
 }

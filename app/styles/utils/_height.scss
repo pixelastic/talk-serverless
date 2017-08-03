@@ -7,5 +7,6 @@
 @for $i from 1 through 20 {
   $height: $i * 5;
   .h-#{$height} { height: $height + %; }
+  .mh-#{$height} { max-height: $height + %; }
 }
 // }}}
