@@ -33,6 +33,16 @@
 .bottom--5 { bottom: -16rem; }
 .left--5   { left:   -16rem; }
 
+
+// Absolute positionning
+@for $i from 1 through 20 {
+  $percent: $i * 5;
+  .top-#{$percent} { top: $percent + %; }
+  .right-#{$percent} { right: $percent + %; }
+  .bottom-#{$percent} { bottom: $percent + %; }
+  .left-#{$percent} { left: $percent + %; }
+}
+
 .absolute-center-horizontal { 
   position: absolute;
   left: 50%; 

@@ -1,12 +1,25 @@
-mixin brick(width, height, color)
-  .brick-container
-    .brick
-      .brick-face.front.bg-gradient-blue.flcnw.flc
-        img.mh-80.mw-80(src='./img/algolia/algolia-dark.svg')
-      .brick-face.back.bg-gradient-blue-inverted.flcnw.flc
-        img.mh-80.mw-80(src='./img/algolia/algolia-dark.svg')
-      .brick-face.right.bg-algolia-blue
-      .brick-face.left.bg-royal-blue
-      .brick-face.top.bg-gradient-blue
-      .brick-face.bottom.bg-gradient-blue
+mixin brick(size, color, image, type, angle)
+  .lego(class=`lego--size-${size}`)
+    .lego__brick(class=`lego__brick--angle-${angle}`)
+      .lego__face.lego__face--front.flcnw.flc(class=`bg-${color}`)
+        img.mh-80.h-80.mw-80(src=image)
+      .lego__face.lego__face--back.flcnw.flc(class=`bg-${color}`)
+        img.mh-80.h-80.mw-80(src=image)
+      .lego__face.lego__face--right(class=`bg-${color}`)
+      .lego__face.lego__face--left(class=`bg-${color}`)
+      .lego__face.lego__face--top(class=`bg-${color}`)
+      .lego__face.lego__face--bott(class=`bg-${color}`)
+    .f3.mt2=type
 
+mixin brick_algolia
+  .lego.lego--size-4x2
+    .lego__brick.lego__brick--angle-top.lego__brick--algolia
+      .lego__face.lego__face--front.flcnw.flc.bg-gradient-blue
+        img.mh-80.h-80.mw-80(src='./img/algolia/algolia-dark.svg')
+      .lego__face.lego__face--back.flcnw.flc.bg-gradient-blue-inverted
+        img.mh-80.h-80.mw-80(src='./img/algolia/algolia-dark.svg')
+      .lego__face.lego__face--right.bg-algolia-blue
+      .lego__face.lego__face--left.bg-royal-blue
+      .lego__face.lego__face--top.bg-gradient-blue
+      .lego__face.lego__face--bottom.bg-gradient-blue
+    .f1.b.algolia-blue.mt5 Search
