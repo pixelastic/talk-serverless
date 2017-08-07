@@ -41,6 +41,11 @@
   .right-#{$percent} { right: $percent + %; }
   .bottom-#{$percent} { bottom: $percent + %; }
   .left-#{$percent} { left: $percent + %; }
+
+  .top--#{$percent} { top: - $percent + %; }
+  .right--#{$percent} { right: - $percent + %; }
+  .bottom--#{$percent} { bottom: - $percent + %; }
+  .left--#{$percent} { left: - $percent + %; }
 }
 
 .absolute-center-horizontal { 

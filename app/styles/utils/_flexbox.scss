@@ -30,4 +30,7 @@
 // Column alignment
 .flcat, .flex-column-align-top { justify-content: flex-start; }
 .flcab, .flex-column-align-bottom { justify-content: flex-end; }
+// Row alignment
+.flral, .flex-row-align-left { justify-content: flex-start; }
+.flrar, .flex-row-align-right { justify-content: flex-end; }
 // }}}

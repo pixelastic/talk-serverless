@@ -29,34 +29,6 @@
   src: url('./fonts/Montserrat-SemiBold.otf');
 }
 
-// Super-Hero title
-@font-face {
-  font-family: 'Palooka';
-  src: url('./fonts/PalookaRegular.otf');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Palooka';
-  src: url('./fonts/PalookaBold.otf');
-  font-weight: bold;
-  font-style: normal;
-}
-
-// Super-Hero text
-@font-face {
-  font-family: 'Crime';
-  src: url('./fonts/CrimeRegular.ttf');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Crime';
-  src: url('./fonts/CrimeBold.ttf');
-  font-weight: bold;
-  font-style: normal;
-}
-
 @font-face {
   font-family: 'DejaVu';
   src: url('./fonts/DejaVuSansMono.eot');
@@ -64,6 +36,17 @@
        url('./fonts/DejaVuSansMono.woff') format('woff'),
        url('./fonts/DejaVuSansMono.ttf') format('truetype'),
        url('./fonts/DejaVuSansMono.svg#dejavu_sans_monobook') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'algolia-brands-iconfont';
+  src: url('./fonts/algolia-brands-iconfont.eot');
+  src: url('./fonts/algolia-brands-iconfont.eot?#iefix') format('embedded-opentype'),
+       url('./fonts/algolia-brands-iconfont.woff') format('woff'),
+       url('./fonts/algolia-brands-iconfont.ttf') format('truetype'),
+       url('./fonts/algolia-brands-iconfont.svg#algolia-brands-iconfont') format('svg');
   font-weight: normal;
   font-style: normal;
 }

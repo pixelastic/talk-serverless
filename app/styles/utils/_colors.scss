@@ -18,7 +18,12 @@ $colors:
   blue-bell $blue-bell,
   ghost $ghost,
   athens-gray $athens-gray,
-  april-fools-purple $april-fools-purple
+  april-fools-purple $april-fools-purple,
+  trust $trust,
+  candor $candor,
+  care $care,
+  humility $humility,
+  grit $grit
 ;
 
 @each $color in $colors {
@@ -27,6 +32,12 @@ $colors:
 
   // Text color
   .#{$name} { color: $value }
+  // Transparent color
+  @for $i from 1 through 9 {
+    .#{$name}-#{$i}0 {
+      color: rgba($value, $i / 10); 
+    }
+  }
   // Background color
   .bg-#{$name} { background-color: $value }
   // Transparent background color

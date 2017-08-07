@@ -1,4 +1,5 @@
 include ./mixins/brick
+include ./mixins/polaroid
 doctype html
 html(lang="en")
   include ./partials/header
@@ -10,20 +11,7 @@ html(lang="en")
         include ./slides/algolia
         include ./slides/demo
         include ./slides/serverless
-
-
-
-        section My Algolia
-        section Numbers today
-        section Numbers when I joined
-        section what changed and what didn't?
-        section offices in various countries (new coming, we're hiring)
-        section different countries, different culture, no culture fit
-        section values instead
-        section Ownership is Trust + Grit
-        section Transparency is Trust + Candor
-        section Feedback is Candor + Care
-        section Constant improvement is Humility + Grit
+        include ./slides/culture
 
         section Two things to remember:
           // - We do search and we do it right

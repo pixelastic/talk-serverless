@@ -1,4 +1,5 @@
-mixin polaroid(src, title)
-  .polaroid-wrapper
-    .polaroid-inner.pa3.pb1.bg-white.shadow-3.f4(title=title)
+mixin polaroid(src, title, classes)
+  .flcnw.pa3.bg-white.shadow-3.f4(class=classes)
+    .fln
       img.h5(src=src)
+    .fln.tc=title
