@@ -9,7 +9,7 @@
 ## TODO
 
 - Compress PNG photos to best possible format
-- Remove all uneeded CSS classes
+- Remove all uneeded CSS classes (https://github.com/purifycss/purifycss ?)
 - Remove all uneeded images
 - Overall improve load time
 - Generate PDF out of the slides
