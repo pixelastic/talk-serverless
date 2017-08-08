@@ -196,7 +196,7 @@ section.slide--horizontal(data-transition='fade-out')
         pre.bg-near-black.ph3.pv1.lh-copy.tl.f3
           code.language-html
             |&lt;header&gt;
-            |  &lt;input id="searchbar" /&gt;
+            |  &lt;input id="searchbox" /&gt;
             |&lt;/header&gt;
             |&lt;div&gt;
             |  &lt;aside&gt;
@@ -204,7 +204,7 @@ section.slide--horizontal(data-transition='fade-out')
             |    &lt;div id="powers"&gt;&lt;/div&gt;
             |    &lt;div id="authors"&gt;&lt;/div&gt;
             |  &lt;/aside&gt;
-            |  &lt;div id="results"&gt;&lt;/div&gt;
+            |  &lt;div id="hits"&gt;&lt;/div&gt;
             |&lt;/div&gt;
         pre.fln.bg-near-black.ph3.pv1.lh-copy.tl.f3.mta.fragment
           code.language-js
@@ -218,12 +218,12 @@ section.slide--horizontal(data-transition='fade-out')
           code.language-js
             |search.addWidget(
             |  instantsearch.widgets.searchBox({
-            |    container: '#searchbar'
+            |    container: '#searchbox'
             |  })
             |);
             |search.addWidget(
             |  instantsearch.widgets.hits({
-            |    container: '#results',
+            |    container: '#hits',
             |    template: "<h3>{{name}}</h3><p>{{description}}</p>"
             |  })
             |);

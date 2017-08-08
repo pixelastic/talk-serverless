@@ -33,4 +33,7 @@
   .bunting--theme1 { @extend .bunting; }
   .algolia-blue--theme1 { @extend .algolia-blue; }
   .bg-white--theme1 { background-color: white; background-image: none; }
+  ~ .progress span { @extend .bg-algolia-blue; }
 }
+
+.layout--vertical ~ .progress span { @extend .bg-algolia-blue; }
