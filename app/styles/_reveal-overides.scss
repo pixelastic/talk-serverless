@@ -14,8 +14,6 @@
 
 .reveal .progress { height: 1%; }
 .reveal .progress span { background-color: $titan-white; }
-.reveal .layout--theme1 ~ .progress span { background-color: $algolia-blue; }
-.reveal .layout--vertical ~ .progress span { background-color: $algolia-blue; }
 
 
 .reveal .slides section .fragment.fragment-reverse {

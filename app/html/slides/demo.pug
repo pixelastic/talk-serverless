@@ -18,9 +18,14 @@ section.slide--horizontal
       .fln.w-third.flcnw.flc
         img(src='./img/dashboard-index.png')
       .fln.w-two-thirds.flc
-        .f1
-          .db Every dashboard action is 
-          .db also doable through the API
+        .f1.scale-130
+          .db 
+            .b.di All actions 
+            .di are doable either
+          .db through 
+            .di.b.algolia-blue the dashboard
+          .db or 
+            .di.b.shamrock the API
     aside.notes
       p Demo through dashboard will be too easy
       p Let's see some code
@@ -133,14 +138,12 @@ section.slide--horizontal
 // Easy search in dashboard
 section.slide--horizontal.mb4
   .h-100.flcnw.pa3.mb4
-    .fln.f1.lh-title.tl.b Better relevance
+    .fln.f1.lh-title.tl.b Now with better relevance
     .fla.flrnw.flc
         img.w-100(src='./img/dashboard-search-settings.gif')
 
 // Search UI Components
-// TODO: Show screenshots of 4 different UIs, to show that they are often the
-// same
-section.slide--horizontal.mb4
+section.slide--horizontal
   -
     var widgets = [
       {name: 'Searchbar', icon: 'searchbar'},
@@ -152,15 +155,15 @@ section.slide--horizontal.mb4
       {name: 'Slider', icon: 'slider'},
       {name: 'Toggle', icon: 'toggle'},
     ]
-  .h-100.flcnw.pa3.mb4
+  .h-100.flcnw.pa3
     .fln.f1.lh-title.tl.b Common components of a search UI
-    .fla.flrnw.bg-right.bg-contain(style="background-image:url('./img/ui-animation.gif')")
+    .fla.flrnw.bg-right.bg-contain(style="background-image:url('./img/instantsearch/ui-animation.gif')")
       .fln.flcnw.w-50.flccv.pa5
         .fla.flcnw.flcspa
           each widget in widgets
             .fln.flrnw
               .fln.flc
-                img.h3(src=`./img/widget-${widget.icon}.svg`)
+                img.h3(src=`./img/instantsearch/widgets/widget-${widget.icon}.svg`)
               .fla.f1.flcnw.flccv.tl.pl3.f2= widget.name
 
 // InstantSearch family
@@ -170,22 +173,22 @@ section.slide--horizontal
     .fla.flcnw
       .fla.flrnw
         .fln.w-third.flc
-          img(src='./img/instantsearch-medal.svg')
+          img(src='./img/instantsearch/instantsearch-medal.svg')
         .fln.w-two-thirds.flcnw.flc.f-subheadline
           .fln Library of search UI 
             .di.b widgets
       .fln.flrnw.fragment.mb4
         .fla.flc
-          img.mv3(src='./img/InstantSearch-React.svg')
+          img.mv3(src='./img/instantsearch/InstantSearch-React.svg')
         .fla.flc
-          img.mv3(src='./img/InstantSearch-Vue.svg')
+          img.mv3(src='./img/instantsearch/InstantSearch-Vue.svg')
         .fla.flc
-          img.mv3(src='./img/InstantSearch-Android.svg')
+          img.mv3(src='./img/instantsearch/InstantSearch-Android.svg')
         .fla.flc
-          img.mv3(src='./img/InstantSearch-iOS.svg')
+          img.mv3(src='./img/instantsearch/InstantSearch-iOS.svg')
 
 // InstantSearch code example
-section.slide--horizontal
+section.slide--horizontal(data-transition='fade-out')
   .h-100.flcnw.pa3
     .fln.f1.lh-title.tl.b InstantSearch example
     .fla.flrnw
@@ -203,7 +206,7 @@ section.slide--horizontal
             |  &lt;/aside&gt;
             |  &lt;div id="results"&gt;&lt;/div&gt;
             |&lt;/div&gt;
-        pre.fln.bg-near-black.ph3.pv1.lh-copy.tl.f3.mta
+        pre.fln.bg-near-black.ph3.pv1.lh-copy.tl.f3.mta.fragment
           code.language-js
             |let search = instantsearch({
             |  appId: 'O3F8QXYK6R',
@@ -211,7 +214,7 @@ section.slide--horizontal
             |  indexName: 'marvel'
             |});
       .fln.w-50.ph2
-        pre.bg-near-black.ph3.pv1.lh-copy.tl.f3
+        pre.bg-near-black.ph3.pv1.lh-copy.tl.f3.fragment
           code.language-js
             |search.addWidget(
             |  instantsearch.widgets.searchBox({
@@ -232,7 +235,6 @@ section.slide--horizontal
             |);
 
 // Demo
-// TODO: Record a slower version of the gif
-section.slide--horizontal
+section.slide--horizontal(data-transition='fade-in')
   .absolute.absolute-0.bg-cover.bg-top(style="background-image: url('./img/demo-marvel.gif')")
 

@@ -29,6 +29,8 @@
 
 // THEME 1
 // Aside background is white instead of a gradient
-.layout--theme1 .bunting--theme1 { color: $bunting; }
-.layout--theme1 .algolia-blue--theme1 { color: $algolia-blue; }
-.layout--theme1 .bg-white--theme1 { background-color: white; background-image: none; }
+.layout--theme1 {
+  .bunting--theme1 { @extend .bunting; }
+  .algolia-blue--theme1 { @extend .algolia-blue; }
+  .bg-white--theme1 { background-color: white; background-image: none; }
+}

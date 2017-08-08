@@ -1,7 +1,6 @@
-
 // My Algolia
 section.slide--horizontal.slide--theme1(data-transition='fade-out')
-  .bg-gradient-blue.white.h-100.flcnw.flc
+  .bg-gradient-orange.white.h-100.flcnw.flc
     .f-subheadline.lh-title.mh4.ph6 My Algolia
 
 // Algolia 2015
@@ -10,7 +9,7 @@ section.slide--horizontal(data-transition='fade-out')
     .fla.flrnw
       .fln.w-50.flcnw.tl
         .fln.flrnw.h3.flrcv
-          img.fln.h-100.mr3(src='./img/old-logo.png')
+          img.fln.h-100.mr3(src='./img/algolia/old-logo.png')
           .fln.f1 in 2015
         .fla.flcnw.flcspa.mt3
           .fln.flcnw.f2
@@ -32,7 +31,7 @@ section.slide--horizontal(data-transition='fade-in')
     .fla.flrnw
       .fln.w-50.flcnw.tl.bunting-50
         .fln.flrnw.h3.flrcv
-          img.fln.h-100.mr3.grayscale(src='./img/old-logo.png')
+          img.fln.h-100.mr3.grayscale(src='./img/algolia/old-logo.png')
           .fln.f1 in 2015
         .fla.flcnw.flcspa.mt3
           .fln.flcnw.f2
@@ -110,6 +109,7 @@ section.slide--horizontal
         img(src='./img/flags/be.png')
         img(src='./img/flags/bg.png')
         img(src='./img/flags/ca.png')
+        img(src='./img/flags/cn.png')
         img(src='./img/flags/cz.png')
         img(src='./img/flags/es.png')
         img(src='./img/flags/fr.png')
@@ -231,11 +231,52 @@ section.slide--horizontal
     p What is needed for trust, etc
     p Everyone has a different answer, see how are people aligned with that
 
-// Ownership
-section Ownership is Trust + Grit
+// Combining values
+section.slide--horizontal
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Combining values
+    .fla.flcnw.flcspa.flcch
+      .fln.flrnw.f-subheadline.flrcv
+        .fln.ml3.flc
+          .h3.w3.pa2.bg-grit.br3.f0
+            img.h-100(src="./img/values/grit.png")
+        .fln.ml2.b.grit Grit
+        .fln.ml3 +
+        .fln.ml3.flc
+          .h3.w3.pa2.bg-trust.br3.f0
+            img.h-100(src="./img/values/trust.png")
+        .fln.ml2.b.trust Trust
+        .fln.ml3 =
+        .fln.ml3.b.gradient-grit-to-trust Ownership
 
-// Transparency
-section Transparency is Trust + Candor
+      .fln.flrnw.f-subheadline.flrcv.fragment
+        .fln.ml3.flc
+          .h3.w3.pa2.bg-trust.br3.f0
+            img(src="./img/values/trust.png")
+        .fln.ml2.b.trust Trust
+        .fln.ml3 +
+        .fln.ml3.flc
+          .h3.w3.pa2.bg-candor.br3.f0
+            img.h-100(src="./img/values/candor.png")
+        .fln.ml2.b.candor Candor
+        .fln.ml3 =
+        .fln.ml3.b.gradient-trust-to-candor Transparency
 
-// Feedback
-section Feedback is Candor + Care
+      .fln.flrnw.f-subheadline.flrcv.fragment
+        .fln.ml3.flc
+          .h3.w3.pa2.bg-candor.br3.f0
+            img.h-100(src="./img/values/candor.png")
+        .fln.ml2.b.candor Candor
+        .fln.ml3 +
+        .fln.ml3.flc
+          .h3.w3.pa2.bg-care.br3.f0
+            img.h-100(src="./img/values/care.png")
+        .fln.ml2.b.care Care
+        .fln.ml3 =
+        .fln.ml3.b.gradient-candor-to-care Feedback
+  aside.notes
+    p Check that in everything we do
+    p Ask during interview what it means to them
+    p One time they showed care
+    p What is needed for trust, etc
+    p Everyone has a different answer, see how are people aligned with that

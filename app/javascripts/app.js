@@ -62,6 +62,7 @@ const Talk = {
     const currentSlideClasses = _.filter(currentSlide.classList, className =>
       _.startsWith(className, 'slide--')
     );
+    console.info(currentSlideClasses);
     const newStateClasses = _.concat(
       _.reject(currentStateClasses, className =>
         _.startsWith(className, 'layout--')
@@ -70,6 +71,7 @@ const Talk = {
         className.replace('slide--', 'layout--')
       )
     );
+    console.info(newStateClasses);
     Talk.$slides.attr('class', newStateClasses.join(' '));
   },
 };
