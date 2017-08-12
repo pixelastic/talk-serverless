@@ -1,3 +1,7 @@
 #!/usr/bin/env sh
+# Build index.html from all the pug files
 BRUNCH_ENV='prod' npm run build:html
+# Package everything through brunch
 brunch build --production
+# Minify the CSS by removing all unused classes
+npm run build:css

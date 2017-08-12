@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+set -e
+mkdir -p ./tmp
+
+# Build the reveal CSS, and any additional overrides in a file that will not be
+# purified
+node-sass ./app/styles/_unpure-before.scss ./tmp/unpure-before.css
+
+# We then generate a file with tachyons and our custom util classes
+node-sass ./app/styles/_app.scss ./tmp/app.raw.css
+# We only keep the util classes that are actually used in the final HTML file
+purifycss ./tmp/app.raw.css ./public/index.html -o ./tmp/app.pure.css
+
+# We finally merge both files together and minify them
+cleancss -O1 --skip-rebase -o ./public/main.css ./tmp/unpure-before.css ./tmp/app.pure.css

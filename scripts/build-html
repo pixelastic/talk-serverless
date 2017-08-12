@@ -1,7 +1,6 @@
 #!/usr/bin/env sh
-
 set -e
-
 mkdir -p ./tmp
+
 pug ./app/html/index.pug -O ./data.json -o ./tmp/
 mv -f ./tmp/index.html ./app/assets/index.html

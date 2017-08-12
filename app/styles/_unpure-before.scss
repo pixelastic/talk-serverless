@@ -1,0 +1,18 @@
+// This file will contain all the CSS declarations we don't want to purify. Even
+// if they don't match anything in the generated index.hmlt we still keep them,
+// as reveal.js will add classes at runtime that will then make them match.
+
+// We re-import variables as some of the other files depends on them
+@import './_variables';
+
+// reveal.js
+@import './vendors/_reveal';
+
+// A few overrides to add the Algolia theme in reveal
+@import './_reveal-overides';
+.reveal { 
+  // Horizontal/Vertical slide layouts
+  @import './_layouts'; 
+  // Syntax highlighting
+  @import './utils/_code';
+}

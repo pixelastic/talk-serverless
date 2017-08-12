@@ -1,0 +1,18 @@
+// We re-import variables as some of the other files depends on them
+@import './_variables';
+
+@import './_fonts';
+@import './_base';
+@import './_functions';
+
+// tachyons.css, scoped in .reveal so it correcly override reveal.js
+.reveal { @import './vendors/_tachyons'; }
+
+.reveal {
+  // Util classes, tachyon-style, extensions
+  @import './_utils';
+  // Last slide: twitter, company, email
+  @import './_contact';
+}
+
+@import './_print';
