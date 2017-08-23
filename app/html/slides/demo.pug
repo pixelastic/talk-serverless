@@ -64,7 +64,6 @@ section.slide--horizontal
             |  "powers": ["Energy repulsors", […], "Super strength"],
             |  "teams": ["Avengers", […], "Stark Industries"],
             |  "adventureCount": 2903
-            |  },
             |  […]
             |}
     aside.notes
@@ -76,21 +75,24 @@ section.slide--horizontal
 section.slide--horizontal
   .h-100.flcnw.pa3
     .fln.f1.lh-title.tl.b Pushing data with Ruby
-    .fla.flrnw.flc
-      pre.bg-near-black.pa2.lh-copy.tl
+    .fla.flcnw.flc
+      pre.bg-near-black.pa3.lh-copy.tl.w-100
         code.language-ruby
           |require 'algoliasearch'
-          |
+      pre.bg-near-black.pa3.lh-copy.tl.w-100.fragment
+        code.language-ruby
           |# Init Algolia index
           |Algolia.init(
           |  application_id: 'O3F8QXYK6R', 
           |  api_key: '476071478e45b023b7ff7d8ba8'
           |)
           |index = Algolia::Index.new('marvel')
-          |
+      pre.bg-near-black.pa3.lh-copy.tl.w-100.fragment
+        code.language-ruby
           |# Read files from disk
           |records = Dir.glob("./records/*.json").map { |file| JSON.parse(File.read(file)) }
-          |
+      pre.bg-near-black.pa3.lh-copy.tl.w-100.fragment
+        code.language-ruby
           |# Push records to index
           |records.each_slice(500) do |batch|
           |  index.add_objects!(batch.to_a)
