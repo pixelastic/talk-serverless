@@ -33,22 +33,23 @@ section.slide--horizontal
 // Data material
 section.slide--horizontal
   .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Data as schemaless JSON
+    .fln.f1.lh-title.tl.b Search into all Marvel superheroes
     .fla.flrnw
       .fln.w-50.flc
         pre.bg-near-black.pa4.tl
           code.language-shell
+            .db.mb3 ~1500 files
             .shell-directory ./records
             .db  ├── 
-              .di.shell-file 8-Ball_(comics).json
+              .di.shell-file 8-Ball.json
             .db  ├── 
-              .di.shell-file Abdul_Alhazred_(comics).json
+              .di.shell-file Abdul_Alhazred.json
             .db  ├── 
               .di.shell-file Abigail_Brand.json
             .db  ├── 
               .di […]
             .db  ├── 
-              .di.shell-file Zombie_(comics).json
+              .di.shell-file Zombie.json
             .db  ├── 
               .di.shell-file Zom.json
             .db  └── 
@@ -56,11 +57,11 @@ section.slide--horizontal
       .fln.w-50.flc
         pre.bg-near-black.pa2.lh-copy.tl.f4
           code.language-js
+            | // Schemaless JSON
             |{
             |  "name": "Iron Man",
             |  "secretIdentity": "Tony Stark",
             |  "description": "Wounded, captured and forced to […]",
-            |  "authors": ["Jack Kirby", "Stan Lee"],
             |  "powers": ["Energy repulsors", […], "Super strength"],
             |  "teams": ["Avengers", […], "Stark Industries"],
             |  "adventureCount": 2903
@@ -131,7 +132,6 @@ section.slide--horizontal
               |   'desc(adventureCount)'
               |  ],
               |  attributesForFaceting: [
-              |   'authors', 
               |   'powers', 
               |   'team'
               |  ]
@@ -190,51 +190,50 @@ section.slide--horizontal
           img.mv3(src='./img/instantsearch/InstantSearch-iOS.svg')
 
 // InstantSearch code example
-section.slide--horizontal(data-transition='fade-out')
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b InstantSearch example
-    .fla.flrnw
-      .fln.w-50.flcnw.flcspb.ph2
-        pre.bg-near-black.ph3.pv1.lh-copy.tl.f3
-          code.language-html
-            |&lt;header&gt;
-            |  &lt;input id="searchbox" /&gt;
-            |&lt;/header&gt;
-            |&lt;div&gt;
-            |  &lt;aside&gt;
-            |    &lt;div id="team"&gt;&lt;/div&gt;
-            |    &lt;div id="powers"&gt;&lt;/div&gt;
-            |    &lt;div id="authors"&gt;&lt;/div&gt;
-            |  &lt;/aside&gt;
-            |  &lt;div id="hits"&gt;&lt;/div&gt;
-            |&lt;/div&gt;
-        pre.fln.bg-near-black.ph3.pv1.lh-copy.tl.f3.mta.fragment
-          code.language-js
-            |let search = instantsearch({
-            |  appId: 'O3F8QXYK6R',
-            |  apiKey: '78e45b023b7ff7d8ba88c59c9db19890',
-            |  indexName: 'marvel'
-            |});
-      .fln.w-50.ph2
-        pre.bg-near-black.ph3.pv1.lh-copy.tl.f3.fragment
-          code.language-js
-            |search.addWidget(
-            |  instantsearch.widgets.searchBox({
-            |    container: '#searchbox'
-            |  })
-            |);
-            |search.addWidget(
-            |  instantsearch.widgets.hits({
-            |    container: '#hits',
-            |    template: "<h3>{{name}}</h3><p>{{description}}</p>"
-            |  })
-            |);
-            |search.addWidget(
-            |  instantsearch.widgets.refinementList({
-            |    container: '#powers',
-            |    attributeName: 'powers'
-            |  })
-            |);
+// section.slide--horizontal(data-transition='fade-out')
+//   .h-100.flcnw.pa3
+//     .fln.f1.lh-title.tl.b InstantSearch example
+//     .fla.flrnw
+//       .fln.w-50.flcnw.flcspb.ph2
+//         pre.bg-near-black.ph3.pv1.lh-copy.tl.f3
+//           code.language-html
+//             |&lt;header&gt;
+//             |  &lt;input id="searchbox" /&gt;
+//             |&lt;/header&gt;
+//             |&lt;div&gt;
+//             |  &lt;aside&gt;
+//             |    &lt;div id="team"&gt;&lt;/div&gt;
+//             |    &lt;div id="powers"&gt;&lt;/div&gt;
+//             |  &lt;/aside&gt;
+//             |  &lt;div id="hits"&gt;&lt;/div&gt;
+//             |&lt;/div&gt;
+//         pre.fln.bg-near-black.ph3.pv1.lh-copy.tl.f3.mta.fragment
+//           code.language-js
+//             |let search = instantsearch({
+//             |  appId: 'O3F8QXYK6R',
+//             |  apiKey: '78e45b023b7ff7d8ba88c59c9db19890',
+//             |  indexName: 'marvel'
+//             |});
+//       .fln.w-50.ph2
+//         pre.bg-near-black.ph3.pv1.lh-copy.tl.f3.fragment
+//           code.language-js
+//             |search.addWidget(
+//             |  instantsearch.widgets.searchBox({
+//             |    container: '#searchbox'
+//             |  })
+//             |);
+//             |search.addWidget(
+//             |  instantsearch.widgets.hits({
+//             |    container: '#hits',
+//             |    template: "<h3>{{name}}</h3><p>{{description}}</p>"
+//             |  })
+//             |);
+//             |search.addWidget(
+//             |  instantsearch.widgets.refinementList({
+//             |    container: '#powers',
+//             |    attributeName: 'powers'
+//             |  })
+//             |);
 
 // Demo
 section.slide--horizontal(data-transition='fade-in')

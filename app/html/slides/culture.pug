@@ -86,18 +86,18 @@ section.slide--horizontal
     .fln.f1.lh-title.tl.b 5 timezones, 2 continents, 1 company
     .fla.flrnw
       .fln.w-two-thirds.flcnw.flcspa.f1.tl
-        .fln.bullet-shamrock Company-wide call every week
-        .fln.bullet-shamrock.fragment(data-fragment-index=1) Live camera between offices
-        .fln.bullet-shamrock.fragment(data-fragment-index=2) 3 weeks stay in Paris
-        .fln.bullet-shamrock.fragment(data-fragment-index=3) Yearly flight to other offices
+        .fln.bullet-shamrock.fragment(data-fragment-index=1) Company-wide call every week
+        .fln.bullet-shamrock.fragment(data-fragment-index=2) Live camera between offices
+        .fln.bullet-shamrock.fragment(data-fragment-index=3) 3 weeks stay in Paris
+        .fln.bullet-shamrock.fragment(data-fragment-index=4) Yearly flight to other offices
       .fln.w-third.flcnw.relative
-        .absolute.top-20.rotate-1.z-1
+        .absolute.top-20.rotate-1.z-1.fragment(data-fragment-index=1)
           +polaroid('./img/photos/all-hands.jpg', 'All-Hands in Paris', 'scale-130')
-        .absolute.left--20.top-20.rotate--2.z-2.fragment(data-fragment-index=1)
+        .absolute.left--20.top-20.rotate--2.z-2.fragment(data-fragment-index=2)
           +polaroid('./img/photos/alexk-webcam.jpg', 'Algolive', 'scale-130')
-        .absolute.left--10.top-20.rotate-2.z-3.fragment(data-fragment-index=2)
+        .absolute.left--10.top-20.rotate-2.z-3.fragment(data-fragment-index=3)
           +polaroid('./img/photos/seine-break.jpg', 'Lunch by the Seine', 'scale-130')
-        .absolute.top-20.rotate--1.z-4.fragment(data-fragment-index=3)
+        .absolute.top-20.rotate--1.z-4.fragment(data-fragment-index=4)
           +polaroid('./img/photos/in-and-out.jpg', 'In-N-Out Burger in San Francisco', 'scale-130')
 
 // Different languages
@@ -142,7 +142,7 @@ section.slide--horizontal(data-transition='fade-out')
           .fln.w-50.flcnw
             .bullet-algolia-blue.fragment Account Executive
             .bullet-algolia-blue.fragment Brand Director
-            .bullet-algolia-blue.fragment SRE, CSM, OSDR MM
+            .bullet-algolia-blue.fragment SRE, CSM, OSR MM
 
 // Different jobs 2/2
 section.slide--horizontal(data-transition='fade-in')
