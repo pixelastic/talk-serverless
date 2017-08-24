@@ -10,6 +10,50 @@ section.slide--horizontal.slide--theme1(data-transition='fade-in')
       .di.strike Live
       |  demo
 
+// Data material
+section.slide--horizontal
+  .h-100.flcnw.pa3
+    .fln.flrnw.h3.flrcv
+      .fln.f1 Search into all the
+      img.fln.h-100.mh3(src='./img/logo-marvel.svg')
+      .fln.f1 superheroes
+    .fla.flrnw
+      .fln.w-third.flc
+        pre.bg-near-black.pa4.tl
+          code.language-shell
+            .db.mb3 ~1500 files
+            .shell-directory ./records
+            .db  ├── 
+              .di.shell-file 8-Ball.json
+            .db  ├── 
+              .di.shell-file Abdul_Alhazred.json
+            .db  ├── 
+              .di.shell-file Abigail_Brand.json
+            .db  ├── 
+              .di […]
+            .db  ├── 
+              .di.shell-file Zombie.json
+            .db  ├── 
+              .di.shell-file Zom.json
+            .db  └── 
+              .di.shell-file Zzzax.json
+      .fln.w-two-thirds.flc
+        pre.bg-near-black.pa3.lh-copy.tl.f3
+          code.language-js
+            |{
+            |  "name": "Iron Man",
+            |  "secretIdentity": "Tony Stark",
+            |  "description": "Wounded, captured and forced to […]",
+            |  "powers": ["Energy repulsors", […], "Super strength"],
+            |  "teams": ["Avengers", […], "Stark Industries"],
+            |  "adventureCount": 2903
+            |  […]
+            |}
+    aside.notes
+      p JSON files on disk
+      p Schemaless files, but semi-structured data
+      p Any attributes, nested ones
+
 // Dashboard upload
 section.slide--horizontal
   .h-100.flcnw.pa3
@@ -29,48 +73,6 @@ section.slide--horizontal
     aside.notes
       p Demo through dashboard will be too easy
       p Let's see some code
-
-// Data material
-section.slide--horizontal
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Search into all Marvel superheroes
-    .fla.flrnw
-      .fln.w-50.flc
-        pre.bg-near-black.pa4.tl
-          code.language-shell
-            .db.mb3 ~1500 files
-            .shell-directory ./records
-            .db  ├── 
-              .di.shell-file 8-Ball.json
-            .db  ├── 
-              .di.shell-file Abdul_Alhazred.json
-            .db  ├── 
-              .di.shell-file Abigail_Brand.json
-            .db  ├── 
-              .di […]
-            .db  ├── 
-              .di.shell-file Zombie.json
-            .db  ├── 
-              .di.shell-file Zom.json
-            .db  └── 
-              .di.shell-file Zzzax.json
-      .fln.w-50.flc
-        pre.bg-near-black.pa2.lh-copy.tl.f4
-          code.language-js
-            | // Schemaless JSON
-            |{
-            |  "name": "Iron Man",
-            |  "secretIdentity": "Tony Stark",
-            |  "description": "Wounded, captured and forced to […]",
-            |  "powers": ["Energy repulsors", […], "Super strength"],
-            |  "teams": ["Avengers", […], "Stark Industries"],
-            |  "adventureCount": 2903
-            |  […]
-            |}
-    aside.notes
-      p JSON files on disk
-      p Schemaless files, but semi-structured data
-      p Any attributes, nested ones
 
 // Pushing data
 section.slide--horizontal
